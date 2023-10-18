@@ -1,0 +1,324 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Upskill</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'userstatic/assets/img/favicon.ico' %}">      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/bootstrap.min.css' %}" />
+      <!-- site css -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/style.css' %}" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/responsive.css' %}" />
+      <!-- color css -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/colors.css' %}" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/bootstrap-select.css' %}" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/perfect-scrollbar.css' %}" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="{% static 'adminstatic/css/custom.css' %}" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   </head>
+   
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="{% url 'admindash' %}"><img class="logo_icon img-responsive" src="{% static 'adminstatic/images/logo/logo_icon.png' %}" alt="#" /></a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="{% static 'adminstatic/images/layout_img/user_img.jpg' %}" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>Administrator</h6>
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        
+                     <li><a href="{% url 'admindash' %}"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+                     
+                    
+                     <li>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-users orange_color"></i> <span> Student Management </span></a>
+                        <ul class="collapse list-unstyled" id="element">
+                           <li><a href="{% url 'pending_students' %}"> <span>Pending Students</span></a></li>
+                           <li><a href="{% url 'manage_students' %}"> <span>Manage Students</span></a></li>
+                          
+                        </ul>
+                     </li>
+                     
+                     <li>
+                        <a href="#app" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Subject Management</span></a>
+                        <ul class="collapse list-unstyled" id="app">
+                           <li><a href="{% url 'add_subject' %}"> <span>Add Subject</span></a></li>
+                           <li><a href="{% url 'manage_subjects' %}"> <span>Manage Subject</span></a></li>
+                           
+                        </ul>
+                     </li>
+                     
+                     <li>
+                        <a href="#apps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-table blue2_color"></i> <span>Marks Management</span></a>
+                        <ul class="collapse list-unstyled" id="apps">
+                           <li><a href="{% url 'assign_marks' %}"> <span>Assign Marks</span></a></li>
+                           <li><a href="{% url 'manage_marks' %}"> <span>Manage Marks</span></a></li>
+                           
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#ap" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-map purple_color2"></i> <span>Dataset</span></a>
+                        <ul class="collapse list-unstyled" id="ap">
+                           <li><a href="{% url 'upload_dataset' %}"> <span>Upload Dataset </span></a></li>
+                           <li><a href="{% url 'view_dataset' %}"> <span>View Dataset</span></a></li>
+                           
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#aps" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-briefcase blue1_color"></i> <span>Algorithms</span></a>
+                        <ul class="collapse list-unstyled" id="aps">
+                           <li><a href="{% url 'svm' %}"> <span>Run SVM </span></a></li>
+                           <li><a href="{% url 'naive' %}"> <span>Run LinearRegression</span></a></li>
+                           
+                        </ul>
+                     </li>
+                    
+                       
+                     <li class="active">
+                        <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-bar-chart green_color"></i> <span>Student Performance</span></a>
+                        <ul class="collapse list-unstyled" id="additional_page">
+                           
+                           <li>
+                              <a href="{% url 'performance_analysis' %}"> <span>Analyze Students Performance</span></a>
+                           </li>
+                           
+                           <li>
+                              <a href="{% url 'marks_analysis' %}"> <span>Marks Analysis</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="active">
+                        <a href="#additional_pag" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Feedback</span></a>
+                        <ul class="collapse list-unstyled" id="additional_pag">
+                           
+                           <li>
+                              <a href="{% url 'admin_feedback' %}"> <span>Student Feedback</span></a>
+                           </li>
+                           <li>
+                              <a href="{% url 'sentiment_analysis' %}"> <span>Sentiment Analysis</span></a>
+                           </li>
+                           <li>
+                              <a href="{% url 'admin_feedback_graph' %}"> <span>Graph Analysis</span></a>
+                           </li>
+                        </ul>
+                     </li>
+                    
+                  </ul>
+               </div>
+            </nav>
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+                           <a href="#"><img class="img-responsive" src="{% static 'adminstatic/images/logo/logo11.jpg' %}" alt="#" /></a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="m-4">
+                              <a href="{% url 'home' %}" class="btn btn-danger">
+                                 <span class="name_user">Logout<i class="fa fa-sign-out ml-2"></i></span>
+                              </a>
+                        </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar --><br><br>
+               <style>
+                  /* Set the body to a flex container to center its content */
+                  .body {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin: 0;
+                  }
+              
+                  /* Customize the card appearance */
+                  .card {
+                      border: 1px solid #ccc;
+                      padding: 20px;
+                      width: 300px;
+                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                      border-radius: 8px;
+                      font-family: Arial, sans-serif;
+                  }
+              
+                  .card h1 {
+                      text-align: center;
+                      margin-bottom: 20px;
+                  }
+              
+                  .card label {
+                      font-weight: bold;
+                  }
+              
+                  .card input[type="text"],
+                  .card select {
+                      width: 100%;
+                      padding: 8px;
+                      margin-bottom: 15px;
+                      border: 1px solid #ccc;
+                      border-radius: 4px;
+                  }
+              
+                  .card select {
+                      appearance: none;
+                      -webkit-appearance: none;
+                      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='%23000000' viewBox='0 0 10 6'%3E%3Cpath d='M5 6L0 0h10z'/%3E%3C/svg%3E"), linear-gradient(to bottom, #f9f9f9, #f1f1f1);
+                      background-repeat: no-repeat, repeat;
+                      background-position: right 0.7em top 50%, 0 0;
+                      background-size: 0.65em auto, 100%;
+                  }
+              
+                  .card input[type="submit"] {
+                      background-color: blue;
+                      color: white;
+                      padding: 10px 16px;
+                      border: none;
+                      border-radius: 4px;
+                      cursor: pointer;
+                  }
+              
+                  .card input[type="submit"]:hover {
+                      background-color: blueviolet;
+                  }
+              </style>
+              <div class="body">
+              <div class="card">
+                  <h1>Assign Marks</h1>
+                  <form method="post">
+                     {% csrf_token %}
+                      <label for="rollNumber">Roll Number:</label>
+                      <input type="text" id="rollNumber" name="rollNumber" required><br>
+              
+                      <label for="marks">Subject:</label>
+                      <select id="marks" name="subject" required>
+                          <option value="" slected disabled>Select Subject</option>
+                          {% for i in sub %}
+                           <option value="{{i.Subject_Name}}">{{i.Subject_Name}}</option>
+                          {% endfor %}
+                         
+                      </select><br>
+                      <label for="subject">Marks:</label>
+                      <input type="text" id="subject" name="marks" required><br>
+                      <label for="year">Year:</label>
+                      <input type="text" id="year" name="year" required><br>
+              
+                      <input type="submit" value="Submit">
+                  </form>
+              </div>
+            </div>
+<!-- footer -->
+<div class="container-fluid">
+    <div class="footer">
+     
+    </div>
+ </div>
+</div>
+<!-- end dashboard inner -->
+</div>
+</div>
+</div>
+<!-- jQuery -->
+<!-- jQuery -->
+<script src="{% static 'adminstatic/js/jquery.min.js' %}"></script>
+<script src="{% static 'adminstatic/js/popper.min.js' %}"></script>
+<script src="{% static 'adminstatic/js/bootstrap.min.js' %}"></script>
+<!-- wow animation -->
+<script src="{% static 'adminstatic/js/animate.js' %}"></script>
+<!-- select country -->
+<script src="{% static 'adminstatic/js/bootstrap-select.js' %}"></script>
+<!-- owl carousel -->
+<script src="{% static 'adminstatic/js/owl.carousel.js' %}"></script> 
+<!-- chart js -->
+<script src="{% static 'adminstatic/js/Chart.min.js' %}"></script>
+<script src="{% static 'adminstatic/js/Chart.bundle.min.js' %}"></script>
+<script src="{% static 'adminstatic/js/utils.js' %}"></script>
+<script src="{% static 'adminstatic/js/analyser.js' %}"></script>
+<!-- nice scrollbar -->
+<script src="{% static 'adminstatic/js/perfect-scrollbar.min.js' %}"></script>
+<script>
+   var ps = new PerfectScrollbar('#sidebar');
+</script>
+<!-- custom js -->
+<script src="{% static 'adminstatic/js/chart_custom_style1.js' %}"></script>
+<script src="{% static 'adminstatic/js/custom.js' %}"></script>
+{% if messages %}
+{% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <script>swal({
+            title: "Success!",
+            text: "{{message}}",
+            icon: "success",
+            button: "OK",
+        });
+        </script>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+        <script>swal({
+            title: "Warning :)",
+            text: "{{message}}",
+            icon: "warning",
+            button: "OK",
+    
+        });
+        </script>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+        <script>swal({
+            title: "info :)",
+            text: "{{message}}",
+            icon: "info",
+            button: "OK",
+        });
+        </script>
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <script>swal({
+            title: "error :)",
+            text: "{{message}}",
+            icon: "error",
+            button: "OK",
+        });
+        </script>
+
+    {% endif %}
+{% endfor %}
+{% endif %}
+</body>
+</html>
